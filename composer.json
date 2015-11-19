@@ -32,7 +32,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "ANavallaSuiza\\Adoadomin\\Gettext": "src/"
+            "ANavallaSuiza\\Adoadomin\\Gettext\\": "src/"
         }
     },
     "autoload-dev": {
