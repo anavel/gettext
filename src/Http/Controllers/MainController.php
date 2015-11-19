@@ -3,7 +3,7 @@ namespace ANavallaSuiza\Adoadomin\Gettext\Http\Controllers;
 
 use ANavallaSuiza\Adoadomin\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class MainController extends Controller
 {
     /**
      * Show the form for editing the gettext entries
