@@ -29,7 +29,7 @@
             <li {!! ($locale === $current) ? 'class="active"' : '' !!}><a href="{{ route(Route::currentRouteName(), $locale) }}">{{ $locale }}</a></li>
             @endforeach
 
-            <li class="pull-right"><a href="#" class="text-muted">
+            <li class="pull-right">
                 <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> {{ trans('adoadomin-gettext::messages.save_button') }}</button>
             </li>
         </ul>
