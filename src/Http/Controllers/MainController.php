@@ -12,7 +12,7 @@ class MainController extends Controller
      */
     public function edit()
     {
-        return view('adoadoming-gettext::pages.edit');
+        return view('adoadomin-gettext::pages.edit');
     }
 
     /**
