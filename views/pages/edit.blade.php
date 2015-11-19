@@ -61,7 +61,7 @@
                     @if ($entry->lines)
                     <a href="#" class="fa fa-info-circle show-references"></a>
 
-                    <ul class="list-unstyled references text-muted">
+                    <ul class="list-unstyled references text-muted" style="display: none;">
                         <li>{!! implode('</li><li>', $entry->lines) !!}</li>
                     </ul>
                     @endif
