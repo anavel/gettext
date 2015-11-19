@@ -56,6 +56,8 @@ class MainController extends Controller
      */
     public function update(Request $request, $locale)
     {
+        Gettext::setEntries($locale, $request->get('translations'));
+
         session()->flash('adoadomin-alert', [
             'type'  => 'success',
             'icon'  => 'fa-check',

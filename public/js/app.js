@@ -39,7 +39,7 @@ $(function() {
                 $group.show();
             }
         });
-    }
+    };
 
     $gettextSearch.on('keydown', function (e) {
         var $this = $(this);
