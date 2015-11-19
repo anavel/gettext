@@ -20,9 +20,9 @@ class GettextModuleProvider extends ModuleProvider
 
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'adoadomin-gettext');
 
-        /*$this->publishes([
+        $this->publishes([
             __DIR__.'/../public/js' => public_path('vendor/adoadomin-gettext/js'),
-        ], 'assets');*/
+        ], 'assets');
 
         $this->publishes([
             __DIR__.'/../config/adoadomin-gettext.php' => config_path('adoadomin-gettext.php'),

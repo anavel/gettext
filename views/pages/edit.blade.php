@@ -20,7 +20,7 @@
 
 @section('content')
 <div class="nav-tabs-custom">
-    <form method="post" action="{{ route('adoadomin-gettext.update', $current) }}">
+    <form method="post" action="{{ route('adoadomin-gettext.update', $current) }}" id="gettext-form">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="_method" value="PUT">
 
@@ -35,7 +35,7 @@
         </ul>
 
         <div class="tab-content">
-            <div class="tab-pane in active">
+            <div class="tab-pane active">
                 <div class="well">
                     <div class="row">
                         <div class="col-lg-8">
@@ -77,4 +77,10 @@
         </div>
     </form>
 </div>
+@stop
+
+@section('footer-scripts')
+    @parent
+
+    <script src="{{ asset('vendor/adoadomin-gettext/js/app.js') }}" type="text/javascript"></script>
 @stop
