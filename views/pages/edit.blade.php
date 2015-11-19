@@ -20,18 +20,22 @@
 
 @section('content')
 <div class="nav-tabs-custom">
-    <ul class="nav nav-tabs">
-        @foreach ($locales as $locale)
-        <li {!! ($locale === $current) ? 'class="active"' : '' !!}><a href="{{ route(Route::currentRouteName(), $locale) }}">{{ $locale }}</a></li>
-        @endforeach
-    </ul>
+    <form method="post" action="{{ route('adoadomin-gettext.update', $current) }}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="_method" value="PUT">
 
-    <div class="tab-content">
-        <div class="tab-pane in active">
-            <form method="post" action="{{ route('adoadomin-gettext.update', $current) }}">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="PUT">
+        <ul class="nav nav-tabs">
+            @foreach ($locales as $locale)
+            <li {!! ($locale === $current) ? 'class="active"' : '' !!}><a href="{{ route(Route::currentRouteName(), $locale) }}">{{ $locale }}</a></li>
+            @endforeach
 
+            <li class="pull-right"><a href="#" class="text-muted">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> {{ trans('adoadomin-gettext::messages.save_button') }}</button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane in active">
                 <div class="well">
                     <div class="row">
                         <div class="col-lg-8">
@@ -59,10 +63,6 @@
 
                     <ul class="list-unstyled references text-muted">
                         <li>{!! implode('</li><li>', $entry->lines) !!}</li>
-
-                        <li class="pull-right"><a href="#" class="text-muted">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> {{ trans('adoadomin-gettext::messages.save_button') }}</button>
-                        </li>
                     </ul>
                     @endif
 
@@ -73,8 +73,8 @@
                 <div class="box-footer clearfix">
                     <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-save"></i> {{ trans('adoadomin-gettext::messages.save_button') }}</button>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
+    </form>
 </div>
 @stop
