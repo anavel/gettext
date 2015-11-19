@@ -9,7 +9,7 @@
 
 @section('breadcrumb')
 <ol class="breadcrumb">
-    <li><a href="{{ route('adoadomin-gettext.home') }}"><i class="fa fa-language"></i> {{ config('adoadomin-gettext.name') }}</a></li>
+    <li><a href="{{ route('adoadomin-gettext.edit') }}"><i class="fa fa-language"></i> {{ config('adoadomin-gettext.name') }}</a></li>
     <li class="active">{{ trans('adoadomin-gettext::messages.edit_title') }}</li>
 </ol>
 @stop
