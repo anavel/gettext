@@ -3,6 +3,7 @@ namespace ANavallaSuiza\Adoadomin\Gettext\Http\Controllers;
 
 use ANavallaSuiza\Adoadomin\Http\Controllers\Controller;
 use Eusonlito\LaravelGettext\Gettext;
+use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
