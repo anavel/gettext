@@ -25,7 +25,7 @@ $(function() {
     };
 
     var gettextEmptyShow = function ($group, text) {
-        return (!$gettextEmpty.is(':checked') || ($group.find('input').val() === ''));
+        return (!$gettextEmpty.is(':checked') || ($group.find('textarea').val() === ''));
     };
 
     var gettextFilter = function () {
