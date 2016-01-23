@@ -1,7 +1,7 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\Gettext\Http\Controllers;
+namespace Anavel\Gettext\Http\Controllers;
 
-use ANavallaSuiza\Adoadomin\Http\Controllers\Controller;
+use Anavel\Foundation\Http\Controllers\Controller;
 use Eusonlito\LaravelGettext\Gettext;
 use Illuminate\Http\Request;
 
@@ -20,7 +20,7 @@ class MainController extends Controller
         if (empty($locale)) {
             $locale = $config['locales'][0];
         } elseif (! in_array($locale, $config['locales'], true)) {
-            return redirect()->route('adoadomin-gettext.edit', $config['locales'][0]);
+            return redirect()->route('anavel-gettext.edit', $config['locales'][0]);
         }
 
         Gettext::setConfig($config);
@@ -40,7 +40,7 @@ class MainController extends Controller
             }
         }
 
-        return view('adoadomin-gettext::pages.edit', [
+        return view('anavel-gettext::pages.edit', [
             'current' => $locale,
             'locales' => $config['locales'],
             'entries' => $entries
@@ -58,14 +58,14 @@ class MainController extends Controller
     {
         Gettext::setEntries($locale, $request->get('translations'));
 
-        session()->flash('adoadomin-alert', [
+        session()->flash('anavel-alert', [
             'type'  => 'success',
             'icon'  => 'fa-check',
-            'title' => trans('adoadomin-gettext::messages.alert_success_update_title'),
-            'text'  => trans('adoadomin-gettext::messages.alert_success_update_text')
+            'title' => trans('anavel-gettext::messages.alert_success_update_title'),
+            'text'  => trans('anavel-gettext::messages.alert_success_update_text')
         ]);
 
-        return redirect()->route('adoadomin-gettext.edit', $locale);
+        return redirect()->route('anavel-gettext.edit', $locale);
     }
 
     protected function getConfig()

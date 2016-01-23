@@ -3,16 +3,16 @@
 Route::group(
     [
         'prefix' => 'gettext',
-        'namespace' => 'ANavallaSuiza\Adoadomin\Gettext\Http\Controllers'
+        'namespace' => 'Anavel\Gettext\Http\Controllers'
     ],
     function () {
         Route::get('/edit/{locale?}', [
-            'as'   => 'adoadomin-gettext.edit',
+            'as'   => 'anavel-gettext.edit',
             'uses' => 'MainController@edit'
         ]);
 
         Route::put('/{locale}', [
-            'as'   => 'adoadomin-gettext.update',
+            'as'   => 'anavel-gettext.update',
             'uses' => 'MainController@update'
         ]);
     }

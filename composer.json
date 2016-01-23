@@ -1,6 +1,12 @@
 {
-    "name": "anavallasuiza/adoadomin-gettext",
-    "description": "",
+    "name": "anavel/gettext",
+    "description": "Manage laravel translation files from your admin panel",
+    "keywords": [
+        "laravel",
+        "admin",
+        "gettext",
+        "cms"
+    ],
     "authors": [
         {
             "name": "Adrian P. Blunier",
@@ -15,7 +21,7 @@
         "php": ">=5.5.9",
         "illuminate/support": "5.1.*",
         "illuminate/translation": "5.1.*",
-        "anavallasuiza/adoadomin": "dev-master",
+        "anavel/foundation": "dev-master",
         "eusonlito/laravel-gettext": "1.*"
     },
     "require-dev": {
@@ -24,20 +30,14 @@
         "mockery/mockery": "0.9.*",
         "whatthejeff/nyancat-phpunit-resultprinter": "~1.2"
     },
-    "repositories": [
-      {
-        "type": "vcs",
-        "url" : "https://github.com/anavallasuiza/adoadomin"
-      }
-    ],
     "autoload": {
         "psr-4": {
-            "ANavallaSuiza\\Adoadomin\\Gettext\\": "src/"
+            "Anavel\\Gettext\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Getext\\Tests\\": "tests"
+            "Anavel\\Gettext\\Tests\\": "tests"
         }
     },
     "minimum-stability": "stable"

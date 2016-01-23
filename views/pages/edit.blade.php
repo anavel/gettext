@@ -1,4 +1,4 @@
-@extends('adoadomin::layouts.master')
+@extends('anavel::layouts.master')
 
 @section('body-classes')
     sidebar-collapse
@@ -6,21 +6,21 @@
 
 @section('content-header')
 <h1>
-    {{ config('adoadomin-gettext.name') }}
-    <small>{{ trans('adoadomin-gettext::messages.edit_title') }}</small>
+    {{ config('anavel-gettext.name') }}
+    <small>{{ trans('anavel-gettext::messages.edit_title') }}</small>
 </h1>
 @stop
 
 @section('breadcrumb')
 <ol class="breadcrumb">
-    <li><a href="{{ route('adoadomin-gettext.edit') }}"><i class="fa fa-language"></i> {{ config('adoadomin-gettext.name') }}</a></li>
-    <li class="active">{{ trans('adoadomin-gettext::messages.edit_title') }}</li>
+    <li><a href="{{ route('anavel-gettext.edit') }}"><i class="fa fa-language"></i> {{ config('anavel-gettext.name') }}</a></li>
+    <li class="active">{{ trans('anavel-gettext::messages.edit_title') }}</li>
 </ol>
 @stop
 
 @section('content')
 <div class="nav-tabs-custom">
-    <form method="post" action="{{ route('adoadomin-gettext.update', $current) }}" id="gettext-form">
+    <form method="post" action="{{ route('anavel-gettext.update', $current) }}" id="gettext-form">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="_method" value="PUT">
 
@@ -30,7 +30,7 @@
             @endforeach
 
             <li class="pull-right">
-                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> {{ trans('adoadomin-gettext::messages.save_button') }}</button>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> {{ trans('anavel-gettext::messages.save_button') }}</button>
             </li>
         </ul>
 
@@ -71,7 +71,7 @@
                 @endforeach
 
                 <div class="box-footer clearfix">
-                    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-save"></i> {{ trans('adoadomin-gettext::messages.save_button') }}</button>
+                    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-save"></i> {{ trans('anavel-gettext::messages.save_button') }}</button>
                 </div>
             </div>
         </div>
@@ -82,5 +82,5 @@
 @section('footer-scripts')
     @parent
 
-    <script src="{{ asset('vendor/adoadomin-gettext/js/app.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('vendor/anavel-gettext/js/app.js') }}" type="text/javascript"></script>
 @stop

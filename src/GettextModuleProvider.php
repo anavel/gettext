@@ -1,7 +1,7 @@
 <?php
-namespace ANavallaSuiza\Adoadomin\Gettext;
+namespace Anavel\Gettext;
 
-use ANavallaSuiza\Adoadomin\Support\ModuleProvider;
+use Anavel\Foundation\Support\ModuleProvider;
 use Request;
 
 class GettextModuleProvider extends ModuleProvider
@@ -16,16 +16,16 @@ class GettextModuleProvider extends ModuleProvider
 
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../views', 'adoadomin-gettext');
+        $this->loadViewsFrom(__DIR__.'/../views', 'anavel-gettext');
 
-        $this->loadTranslationsFrom(__DIR__.'/../lang', 'adoadomin-gettext');
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'anavel-gettext');
 
         $this->publishes([
-            __DIR__.'/../public/js' => public_path('vendor/adoadomin-gettext/js'),
+            __DIR__.'/../public/js' => public_path('vendor/anavel-gettext/js'),
         ], 'assets');
 
         $this->publishes([
-            __DIR__.'/../config/adoadomin-gettext.php' => config_path('adoadomin-gettext.php'),
+            __DIR__.'/../config/anavel-gettext.php' => config_path('anavel-gettext.php'),
         ], 'config');
     }
 
@@ -36,9 +36,7 @@ class GettextModuleProvider extends ModuleProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/adoadomin-gettext.php', 'adoadomin-gettext');
-
-        $this->app->register('ANavallaSuiza\Crudoado\Providers\ViewComposersServiceProvider');
+        $this->mergeConfigFrom(__DIR__.'/../config/anavel-gettext.php', 'anavel-gettext');
     }
 
     /**
@@ -53,7 +51,7 @@ class GettextModuleProvider extends ModuleProvider
 
     public function name()
     {
-        return config('adoadomin-gettext.name');
+        return config('anavel-gettext.name');
     }
 
     public function routes()
@@ -63,7 +61,7 @@ class GettextModuleProvider extends ModuleProvider
 
     public function mainRoute()
     {
-        return route('adoadomin-gettext.edit');
+        return route('anavel-gettext.edit');
     }
 
     public function hasSidebar()
@@ -73,7 +71,7 @@ class GettextModuleProvider extends ModuleProvider
 
     public function sidebarMenu()
     {
-        //return 'adoadomin-gettext::molecules.sidebar.default';
+        //return 'anavel-gettext::molecules.sidebar.default';
     }
 
     public function isActive()
