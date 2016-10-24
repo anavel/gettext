@@ -1,4 +1,5 @@
 <?php
+
 namespace Anavel\Gettext\Http\Controllers;
 
 use Anavel\Foundation\Http\Controllers\Controller;
@@ -8,9 +9,10 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     /**
-     * Show the form for editing the gettext entries
+     * Show the form for editing the gettext entries.
      *
-     * @param  string  $locale
+     * @param string $locale
+     *
      * @return Response
      */
     public function edit($locale = '')
@@ -19,7 +21,7 @@ class MainController extends Controller
 
         if (empty($locale)) {
             $locale = $config['locales'][0];
-        } elseif (! in_array($locale, $config['locales'], true)) {
+        } elseif (!in_array($locale, $config['locales'], true)) {
             return redirect()->route('anavel-gettext.edit', $config['locales'][0]);
         }
 
@@ -43,7 +45,7 @@ class MainController extends Controller
         return view('anavel-gettext::pages.edit', [
             'current' => $locale,
             'locales' => $config['locales'],
-            'entries' => $entries
+            'entries' => $entries,
         ]);
     }
 
@@ -51,7 +53,8 @@ class MainController extends Controller
      * Update the gettext entries in storage.
      *
      * @param Request $request
-     * @param  string  $locale
+     * @param string  $locale
+     *
      * @return Response
      */
     public function update(Request $request, $locale)
@@ -62,7 +65,7 @@ class MainController extends Controller
             'type'  => 'success',
             'icon'  => 'fa-check',
             'title' => trans('anavel-gettext::messages.alert_success_update_title'),
-            'text'  => trans('anavel-gettext::messages.alert_success_update_text')
+            'text'  => trans('anavel-gettext::messages.alert_success_update_text'),
         ]);
 
         return redirect()->route('anavel-gettext.edit', $locale);
