@@ -1,4 +1,5 @@
 <?php
+
 namespace Anavel\Gettext;
 
 use Anavel\Foundation\Support\ModuleProvider;
@@ -6,7 +7,6 @@ use Request;
 
 class GettextModuleProvider extends ModuleProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
